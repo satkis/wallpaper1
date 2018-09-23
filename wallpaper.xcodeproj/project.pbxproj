@@ -13,6 +13,17 @@
 		FF2F4D30214EAD0C00B5FB4E /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4D2F214EAD0C00B5FB4E /* FeedLayout.swift */; };
 		FF61FD5C2152C12B005AA1A6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD5B2152C12B005AA1A6 /* DetailVC.swift */; };
 		FF61FD5E2152C40E005AA1A6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD5D2152C40E005AA1A6 /* DataService.swift */; };
+		FF61FD6A2157FDFC005AA1A6 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD602157FDF7005AA1A6 /* UIViewXRadialGradient.swift */; };
+		FF61FD6B2157FDFC005AA1A6 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD612157FDF7005AA1A6 /* UIImageViewX.swift */; };
+		FF61FD6C2157FDFC005AA1A6 /* UIViewAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD622157FDF7005AA1A6 /* UIViewAnchorPoint.swift */; };
+		FF61FD6D2157FDFC005AA1A6 /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD632157FDF8005AA1A6 /* UIVisualEffectViewX.swift */; };
+		FF61FD6E2157FDFC005AA1A6 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD642157FDF9005AA1A6 /* UITextFieldX.swift */; };
+		FF61FD6F2157FDFC005AA1A6 /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD652157FDF9005AA1A6 /* UISliderX.swift */; };
+		FF61FD702157FDFC005AA1A6 /* UIViewControllerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD662157FDFA005AA1A6 /* UIViewControllerX.swift */; };
+		FF61FD712157FDFC005AA1A6 /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD672157FDFA005AA1A6 /* UIButtonX.swift */; };
+		FF61FD722157FDFC005AA1A6 /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD682157FDFA005AA1A6 /* UILabelX.swift */; };
+		FF61FD732157FDFC005AA1A6 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD692157FDFA005AA1A6 /* UIViewX.swift */; };
+		FF61FD7621580321005AA1A6 /* FloatingSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */; };
 		FFCD43DE214E5B0F00898071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DD214E5B0F00898071 /* AppDelegate.swift */; };
 		FFCD43E0214E5B0F00898071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DF214E5B0F00898071 /* ViewController.swift */; };
 		FFCD43E3214E5B0F00898071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD43E1214E5B0F00898071 /* Main.storyboard */; };
@@ -30,6 +41,17 @@
 		FF2F4D2F214EAD0C00B5FB4E /* FeedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
 		FF61FD5B2152C12B005AA1A6 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		FF61FD5D2152C40E005AA1A6 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FF61FD602157FDF7005AA1A6 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
+		FF61FD612157FDF7005AA1A6 /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
+		FF61FD622157FDF7005AA1A6 /* UIViewAnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnchorPoint.swift; sourceTree = "<group>"; };
+		FF61FD632157FDF8005AA1A6 /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
+		FF61FD642157FDF9005AA1A6 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		FF61FD652157FDF9005AA1A6 /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
+		FF61FD662157FDFA005AA1A6 /* UIViewControllerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerX.swift; sourceTree = "<group>"; };
+		FF61FD672157FDFA005AA1A6 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		FF61FD682157FDFA005AA1A6 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
+		FF61FD692157FDFA005AA1A6 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSettingsButton.swift; sourceTree = "<group>"; };
 		FFCD43DA214E5B0F00898071 /* wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD43DD214E5B0F00898071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD43DF214E5B0F00898071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +125,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FF61FD5F2157FDE6005AA1A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF61FD7421580218005AA1A6 /* Desings */,
+				FFCD43E7214E5B1000898071 /* Assets.xcassets */,
+				FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF61FD7421580218005AA1A6 /* Desings */ = {
+			isa = PBXGroup;
+			children = (
+				FF61FD672157FDFA005AA1A6 /* UIButtonX.swift */,
+				FF61FD612157FDF7005AA1A6 /* UIImageViewX.swift */,
+				FF61FD682157FDFA005AA1A6 /* UILabelX.swift */,
+				FF61FD652157FDF9005AA1A6 /* UISliderX.swift */,
+				FF61FD642157FDF9005AA1A6 /* UITextFieldX.swift */,
+				FF61FD622157FDF7005AA1A6 /* UIViewAnchorPoint.swift */,
+				FF61FD662157FDFA005AA1A6 /* UIViewControllerX.swift */,
+				FF61FD692157FDFA005AA1A6 /* UIViewX.swift */,
+				FF61FD602157FDF7005AA1A6 /* UIViewXRadialGradient.swift */,
+				FF61FD632157FDF8005AA1A6 /* UIVisualEffectViewX.swift */,
+			);
+			path = Desings;
+			sourceTree = "<group>";
+		};
 		FFCD43D1214E5B0F00898071 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +173,12 @@
 		FFCD43DC214E5B0F00898071 /* wallpaper */ = {
 			isa = PBXGroup;
 			children = (
+				FF61FD5F2157FDE6005AA1A6 /* Resources */,
 				FF2F4D2C214E9DAB00B5FB4E /* Services */,
 				FF2F4D26214E71D600B5FB4E /* Model */,
 				FF2F4D29214E964B00B5FB4E /* View */,
 				FF61FD5A2152C10C005AA1A6 /* Controller */,
 				FFCD43E1214E5B0F00898071 /* Main.storyboard */,
-				FFCD43E7214E5B1000898071 /* Assets.xcassets */,
 				FFCD43E9214E5B1000898071 /* LaunchScreen.storyboard */,
 				FFCD43EC214E5B1000898071 /* Info.plist */,
 				FFCD43E4214E5B0F00898071 /* wallpaper.xcdatamodeld */,
@@ -250,14 +299,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF61FD702157FDFC005AA1A6 /* UIViewControllerX.swift in Sources */,
 				FF2F4D2B214E967E00B5FB4E /* WallpaperCell.swift in Sources */,
+				FF61FD6B2157FDFC005AA1A6 /* UIImageViewX.swift in Sources */,
+				FF61FD6D2157FDFC005AA1A6 /* UIVisualEffectViewX.swift in Sources */,
 				FFCD43E0214E5B0F00898071 /* ViewController.swift in Sources */,
 				FFCD43E6214E5B0F00898071 /* wallpaper.xcdatamodeld in Sources */,
+				FF61FD6F2157FDFC005AA1A6 /* UISliderX.swift in Sources */,
+				FF61FD6E2157FDFC005AA1A6 /* UITextFieldX.swift in Sources */,
 				FF2F4D30214EAD0C00B5FB4E /* FeedLayout.swift in Sources */,
 				FF2F4D28214E71EE00B5FB4E /* Wallpaper.swift in Sources */,
+				FF61FD6C2157FDFC005AA1A6 /* UIViewAnchorPoint.swift in Sources */,
 				FF61FD5C2152C12B005AA1A6 /* DetailVC.swift in Sources */,
+				FF61FD712157FDFC005AA1A6 /* UIButtonX.swift in Sources */,
 				FFCD43DE214E5B0F00898071 /* AppDelegate.swift in Sources */,
 				FF61FD5E2152C40E005AA1A6 /* DataService.swift in Sources */,
+				FF61FD722157FDFC005AA1A6 /* UILabelX.swift in Sources */,
+				FF61FD7621580321005AA1A6 /* FloatingSettingsButton.swift in Sources */,
+				FF61FD6A2157FDFC005AA1A6 /* UIViewXRadialGradient.swift in Sources */,
+				FF61FD732157FDFC005AA1A6 /* UIViewX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

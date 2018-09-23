@@ -18,6 +18,14 @@ class DetailVC: UIViewController {
     @IBOutlet weak var wallpaperTitleLbl: UILabel!
     @IBOutlet weak var wallpaperImgLbl: UIImageView!
     
+    @IBOutlet weak var settingsLbl: UIButton!
+    @IBOutlet weak var storyLbl: UIButton!
+    @IBOutlet weak var shareLbl: UIButton!
+    @IBOutlet weak var saveLbl: UIButton!
+    @IBOutlet weak var clockLbl: UIButton!
+    @IBOutlet weak var appsLbl: UIButton!
+    @IBOutlet weak var likeLbl: UIButton!
+    @IBOutlet weak var smthElseLbl: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +86,36 @@ class DetailVC: UIViewController {
     }
     
  
+    @IBAction func settingsBttnTapped(_ sender: Any) {
+        if self.settingsLbl.transform == .identity {
+            //opened
+        } else {
+            //closed
+        }
+    }
+    
+    @IBAction func storyBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func shareBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func smthElseBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func appsBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func clockBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func likeBttnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func saveBttnTapped(_ sender: Any) {
+    }
+    
+
+    
     
 }

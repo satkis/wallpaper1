@@ -168,6 +168,108 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-Tw-BSL" customClass="FloatingSettingsButton" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="12" y="553" width="55" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="settings">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.067531221837166561" green="0.33335516432918749" blue="0.66666666666666663" alpha="0.68439640410958902" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="settingsBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="nxD-46-jUk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1G-qd-hc7">
+                                <rect key="frame" x="313" y="509" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Clock" backgroundImage="5">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clockBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="RkO-Z0-aQ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3y-rM-e3J">
+                                <rect key="frame" x="164" y="559" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="SAVE" backgroundImage="5">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="xII-PM-oui"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-3M-MbS">
+                                <rect key="frame" x="313" y="559" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Apps" backgroundImage="5">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="appsBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="x20-r4-EAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-FA-mQN">
+                                <rect key="frame" x="16" y="509" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" backgroundImage="4">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="F2Y-1V-QxK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N62-FE-wIR">
+                                <rect key="frame" x="16" y="459" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Story" backgroundImage="3">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="storyBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="rst-Jx-b64"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV5-Kd-2C7">
+                                <rect key="frame" x="313" y="451" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="HEART" backgroundImage="5">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="Fth-Yg-lCK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtt-tq-Gt4">
+                                <rect key="frame" x="16" y="409" width="46" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="smth" backgroundImage="5">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="smthElseBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="ZjB-Xf-ASZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -188,7 +290,15 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="cal-Id-LOD"/>
+                        <outlet property="appsLbl" destination="rFR-3M-MbS" id="9UG-3x-tMM"/>
+                        <outlet property="clockLbl" destination="k1G-qd-hc7" id="iBs-2f-367"/>
+                        <outlet property="likeLbl" destination="fV5-Kd-2C7" id="Ike-va-Zao"/>
+                        <outlet property="saveLbl" destination="t3y-rM-e3J" id="VAA-0s-Eag"/>
+                        <outlet property="settingsLbl" destination="GkH-Tw-BSL" id="m1z-CB-QTc"/>
+                        <outlet property="shareLbl" destination="Yqk-FA-mQN" id="6gi-pQ-jsY"/>
+                        <outlet property="smthElseLbl" destination="Dtt-tq-Gt4" id="eTe-iJ-fHj"/>
+                        <outlet property="storyLbl" destination="N62-FE-wIR" id="Aft-mn-Slz"/>
+                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="CQG-cZ-waA"/>
                         <outlet property="wallpaperTitleLbl" destination="peg-1g-1vJ" id="Crt-zI-1Mn"/>
                     </connections>
                 </viewController>
@@ -204,5 +314,9 @@
     </scenes>
     <resources>
         <image name="1" width="480" height="601"/>
+        <image name="3" width="477" height="603"/>
+        <image name="4" width="472" height="595"/>
+        <image name="5" width="473" height="599"/>
+        <image name="settings" width="55" height="55"/>
     </resources>
 </document>
