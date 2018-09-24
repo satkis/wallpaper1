@@ -91,10 +91,17 @@
                                                     <nil key="textColor"/>
                                                     <color key="highlightedColor" red="1" green="0.17664870271672284" blue="0.15258174673775171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-pH-zXC">
+                                                    <rect key="frame" x="166" y="51" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="pDB-ag-RJq" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leading" id="5QY-MB-vqw"/>
+                                            <constraint firstItem="phw-pH-zXC" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="topMargin" constant="23" id="7Dr-0u-4N5"/>
                                             <constraint firstAttribute="trailing" secondItem="YoP-Xn-mag" secondAttribute="trailing" constant="5" id="8rs-rq-HoT"/>
                                             <constraint firstItem="pDB-ag-RJq" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="top" id="G4N-sj-uvy"/>
                                             <constraint firstItem="I4v-oO-j6i" firstAttribute="centerY" secondItem="YVJ-Pr-qKh" secondAttribute="centerY" id="LTN-Yy-VPg"/>
@@ -105,6 +112,7 @@
                                             <constraint firstItem="R7B-kU-XzF" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="top" constant="20" id="kKV-V7-nLg"/>
                                             <constraint firstAttribute="bottom" secondItem="pDB-ag-RJq" secondAttribute="bottom" id="uNS-2S-ayI"/>
                                             <constraint firstItem="R7B-kU-XzF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YVJ-Pr-qKh" secondAttribute="leading" symbolic="YES" id="vGd-US-bRI"/>
+                                            <constraint firstItem="phw-pH-zXC" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leadingMargin" constant="158" id="wcQ-At-Hrh"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="I4v-oO-j6i" secondAttribute="trailing" id="xfT-KW-GE1"/>
                                             <constraint firstAttribute="bottom" secondItem="YoP-Xn-mag" secondAttribute="bottom" constant="2" id="xkD-TU-uuN"/>
                                             <constraint firstAttribute="trailing" secondItem="R7B-kU-XzF" secondAttribute="trailing" id="zSZ-va-e5B"/>
@@ -112,6 +120,7 @@
                                         <size key="customSize" width="375" height="140"/>
                                         <connections>
                                             <outlet property="imageDetailsLabel" destination="YoP-Xn-mag" id="bw6-hA-rcL"/>
+                                            <outlet property="imageID" destination="phw-pH-zXC" id="Tpo-0W-sXJ"/>
                                             <outlet property="imageStatusLabel" destination="R7B-kU-XzF" id="FyK-74-lFQ"/>
                                             <outlet property="imageTitleLabel" destination="I4v-oO-j6i" id="TZI-A0-1sK"/>
                                             <outlet property="imageView" destination="pDB-ag-RJq" id="vWa-er-xt4"/>
@@ -209,6 +218,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="pickerBtnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="TOn-Dd-fIn"/>
                                             <action selector="smthElseBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="ZjB-Xf-ASZ"/>
                                         </connections>
                                     </button>
@@ -353,6 +363,13 @@
                                     <action selector="likeBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="Fth-Yg-lCK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NXK-5P-IW7" customClass="PHLivePhotoView">
+                                <rect key="frame" x="52" y="57" width="257" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="UwL-sG-flb"/>
+                                    <constraint firstAttribute="height" constant="238" id="lYR-2Y-HDD"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -366,9 +383,11 @@
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="trailing" secondItem="d7p-ab-7Ex" secondAttribute="trailing" constant="25" id="H5n-oS-9b4"/>
                             <constraint firstItem="d7p-ab-7Ex" firstAttribute="trailing" secondItem="k1G-qd-hc7" secondAttribute="trailing" constant="10" id="MUR-k4-54O"/>
                             <constraint firstItem="d7p-ab-7Ex" firstAttribute="trailing" secondItem="rFR-3M-MbS" secondAttribute="trailing" constant="10" id="PpG-ea-pfC"/>
+                            <constraint firstItem="NXK-5P-IW7" firstAttribute="top" secondItem="d7p-ab-7Ex" secondAttribute="top" constant="37" id="TNT-Vi-vpA"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="bottom" secondItem="LEq-wh-meg" secondAttribute="bottom" constant="25" id="YEG-dI-xjv"/>
                             <constraint firstItem="rFR-3M-MbS" firstAttribute="top" secondItem="k1G-qd-hc7" secondAttribute="bottom" constant="20" id="a2T-tG-wjS"/>
                             <constraint firstItem="t3y-rM-e3J" firstAttribute="bottom" secondItem="l7v-iD-l9u" secondAttribute="bottom" constant="-187" id="aOw-Wh-hTL"/>
+                            <constraint firstItem="NXK-5P-IW7" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="52" id="kRA-0h-AHK"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="-25" id="o6P-HL-lqy"/>
                             <constraint firstItem="d7p-ab-7Ex" firstAttribute="bottom" secondItem="rFR-3M-MbS" secondAttribute="bottom" constant="15" id="rp9-VP-kuK"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="top" secondItem="LEq-wh-meg" secondAttribute="top" constant="-25" id="ubU-tA-xsT"/>
@@ -388,13 +407,14 @@
                         <outlet property="appsLbl" destination="rFR-3M-MbS" id="9UG-3x-tMM"/>
                         <outlet property="clockLbl" destination="k1G-qd-hc7" id="iBs-2f-367"/>
                         <outlet property="likeLbl" destination="fV5-Kd-2C7" id="Ike-va-Zao"/>
+                        <outlet property="livePhotoView" destination="NXK-5P-IW7" id="asT-fR-kwS"/>
                         <outlet property="saveLbl" destination="t3y-rM-e3J" id="VAA-0s-Eag"/>
                         <outlet property="settingsExpandLbl" destination="l7v-iD-l9u" id="qyS-AP-OqY"/>
                         <outlet property="settingsLbl" destination="GkH-Tw-BSL" id="m1z-CB-QTc"/>
                         <outlet property="shareLbl" destination="Yqk-FA-mQN" id="6gi-pQ-jsY"/>
                         <outlet property="smthElseLbl" destination="Dtt-tq-Gt4" id="eTe-iJ-fHj"/>
                         <outlet property="storyLbl" destination="N62-FE-wIR" id="Aft-mn-Slz"/>
-                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="IVr-PN-RoG"/>
+                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="MBI-py-i53"/>
                         <outlet property="wallpaperTitleLbl" destination="peg-1g-1vJ" id="Crt-zI-1Mn"/>
                     </connections>
                 </viewController>

@@ -1,20 +1,12 @@
-//
-//  DetailVC.swift
-//  wallpaper
-//
-//  Created by satkis on 9/19/18.
-//  Copyright © 2018 satkis. All rights reserved.
-//
-
 import UIKit
 import Hero
 import PhotosUI
 import Photos
 import MobileCoreServices
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate{
     
-//    var wallpaperInDetailVC: Wallpaper!
+    //    var wallpaperInDetailVC: Wallpaper!
     var imageNamee: String!
     var imageTitle: String!
     
@@ -31,21 +23,18 @@ class DetailVC: UIViewController {
     @IBOutlet weak var smthElseLbl: UIButton!
     @IBOutlet weak var settingsExpandLbl: UIViewX!
     
-//    @IBOutlet weak var livePhotoView: PHLivePhotoView! {
-//        didSet {
-//            loadVideoWithVideoURL(Bundle.main.url(forResource: "video", withExtension: "m4v")!)
-//        }
-//    }
+    @IBOutlet weak fileprivate var livePhotoView: PHLivePhotoView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hero.isEnabled = true
-        
-//        wallpaperTitleLbl.text = wallpaperInDetailVC.wallpaperName
+        livePhotoView.contentMode = UIViewContentMode.scaleAspectFit
+        livePhotoView.delegate = self
+        //        wallpaperTitleLbl.text = wallpaperInDetailVC.wallpaperName
         wallpaperTitleLbl.text = self.imageTitle
-//        wallpaperImgLbl.image = UIImage(named: wallpaperInDetailVC.wallpaperId)
+        //        wallpaperImgLbl.image = UIImage(named: wallpaperInDetailVC.wallpaperId)
         wallpaperImgLbl.image = UIImage(named: self.imageNamee)
         wallpaperImgLbl.hero.id = self.imageNamee
         
@@ -55,6 +44,48 @@ class DetailVC: UIViewController {
         
         closeMenu()
     }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        dismiss(animated: true, completion: nil)
+        
+        print("\(info)")
+        
+        if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
+            livePhotoView.livePhoto = livePhoto
+            livePhotoView.startPlayback(with: .full)
+        } else {
+            let alert = UIAlertController(
+                title: "Failed",
+                message: "This is not a Live Photo.",
+                preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(
+                title: "OK",
+                style: UIAlertActionStyle.cancel,
+                handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
+        livePhotoView.startPlayback(with: .full)
+    }
+    
+    // =========================================================================
+    // MARK: - Actions
+    
+    @IBAction func pickerBtnTapped(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.mediaTypes = [kUTTypeImage as String, kUTTypeLivePhoto as String]
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
     
     func applyMotionEffect (toView view:UIView, magnitude: Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
@@ -71,8 +102,8 @@ class DetailVC: UIViewController {
         
     }
     
-
- 
+    
+    
     @IBAction func panPanPan(_ sender: UIPanGestureRecognizer) {
         
         switch sender.state {
@@ -83,7 +114,7 @@ class DetailVC: UIViewController {
             let progress = transaltion.y / 2 / view.bounds.height
             Hero.shared.update(progress)
             
-        let currentPos = CGPoint(x: transaltion.x + wallpaperImgLbl.center.x, y: transaltion.y + wallpaperImgLbl.center.y)
+            let currentPos = CGPoint(x: transaltion.x + wallpaperImgLbl.center.x, y: transaltion.y + wallpaperImgLbl.center.y)
             Hero.shared.apply(modifiers: [.position(currentPos)], to: wallpaperImgLbl)
         default:
             let transaltion = sender.translation(in: nil)
@@ -100,8 +131,8 @@ class DetailVC: UIViewController {
         }
         
     }
-
- 
+    
+    
     @IBAction func settingsBttnTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             if self.settingsExpandLbl.transform == .identity {
@@ -115,8 +146,8 @@ class DetailVC: UIViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 10, options: [], animations: {
             if self.settingsExpandLbl.transform == .identity {
-            
-            self.shareLbl.transform = .identity
+                
+                self.shareLbl.transform = .identity
                 self.smthElseLbl.transform = .identity
                 self.storyLbl.transform = .identity
             }
@@ -152,7 +183,7 @@ class DetailVC: UIViewController {
     @IBAction func saveBttnTapped(_ sender: Any) {
     }
     
-
+    
     
     
 }

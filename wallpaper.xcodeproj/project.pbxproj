@@ -11,6 +11,7 @@
 		FF2F4D28214E71EE00B5FB4E /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4D27214E71EE00B5FB4E /* Wallpaper.swift */; };
 		FF2F4D2B214E967E00B5FB4E /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4D2A214E967E00B5FB4E /* WallpaperCell.swift */; };
 		FF2F4D30214EAD0C00B5FB4E /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4D2F214EAD0C00B5FB4E /* FeedLayout.swift */; };
+		FF55AB372159905A0053B76F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF55AB362159905A0053B76F /* GoogleService-Info.plist */; };
 		FF61FD5C2152C12B005AA1A6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD5B2152C12B005AA1A6 /* DetailVC.swift */; };
 		FF61FD5E2152C40E005AA1A6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD5D2152C40E005AA1A6 /* DataService.swift */; };
 		FF61FD6A2157FDFC005AA1A6 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD602157FDF7005AA1A6 /* UIViewXRadialGradient.swift */; };
@@ -39,6 +40,7 @@
 		FF2F4D27214E71EE00B5FB4E /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		FF2F4D2A214E967E00B5FB4E /* WallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 		FF2F4D2F214EAD0C00B5FB4E /* FeedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
+		FF55AB362159905A0053B76F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF61FD5B2152C12B005AA1A6 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		FF61FD5D2152C40E005AA1A6 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		FF61FD602157FDF7005AA1A6 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				FFCD43EC214E5B1000898071 /* Info.plist */,
 				FFCD43E4214E5B0F00898071 /* wallpaper.xcdatamodeld */,
 				FFCD43DD214E5B0F00898071 /* AppDelegate.swift */,
+				FF55AB362159905A0053B76F /* GoogleService-Info.plist */,
 			);
 			path = wallpaper;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD43EB214E5B1000898071 /* LaunchScreen.storyboard in Resources */,
+				FF55AB372159905A0053B76F /* GoogleService-Info.plist in Resources */,
 				FFCD43E8214E5B1000898071 /* Assets.xcassets in Resources */,
 				FFCD43E3214E5B0F00898071 /* Main.storyboard in Resources */,
 			);
@@ -263,11 +267,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-wallpaper/Pods-wallpaper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

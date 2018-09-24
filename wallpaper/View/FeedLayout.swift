@@ -42,8 +42,8 @@ class FeedLayout: UICollectionViewLayout {
     
     var numberOfItems: Int {
         get {
-//            return collectionView!.numberOfItems(inSection: 0)
-            return 7
+            return collectionView!.numberOfItems(inSection: 0)
+//            return 7
         }
     }
     

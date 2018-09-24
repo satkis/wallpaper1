@@ -7,5 +7,11 @@ target 'wallpaper' do
 
   # Pods for wallpaper
 pod 'Hero'
-
+pod ‘Firebase’
+pod ‘Firebase/Core’
+pod ‘Firebase/Auth’
+pod ‘Firebase/Database’
+pod 'Firebase/Storage'
+pod 'Alamofire', '~> 4.7'
+pod 'AlamofireImage', '~> 3.3'
 end
