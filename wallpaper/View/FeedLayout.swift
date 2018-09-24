@@ -43,7 +43,7 @@ class FeedLayout: UICollectionViewLayout {
     var numberOfItems: Int {
         get {
 //            return collectionView!.numberOfItems(inSection: 0)
-            return 5
+            return 7
         }
     }
     

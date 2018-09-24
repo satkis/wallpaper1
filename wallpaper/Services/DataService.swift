@@ -16,7 +16,10 @@ class DataService {
         Wallpaper(wallpaperName: "Name 11", wallpaperId: "1.jpg", wallpaperDetails: "this is image number 1111", wallpaperStatus: "Static"),
         Wallpaper(wallpaperName: "Name 222", wallpaperId: "2.jpg", wallpaperDetails: "this is image number 2222", wallpaperStatus: "Live"),
         Wallpaper(wallpaperName: "Name 333", wallpaperId: "3.jpg", wallpaperDetails: "this is image number 3333", wallpaperStatus: "Static"),
-        Wallpaper(wallpaperName: "Name 444", wallpaperId: "4.jpg", wallpaperDetails: "this is image number 4444", wallpaperStatus: "Live")
+        Wallpaper(wallpaperName: "Name 444", wallpaperId: "4.jpg", wallpaperDetails: "this is image number 4444", wallpaperStatus: "Live"),
+        Wallpaper(wallpaperName: "Name 555", wallpaperId: "5.jpg", wallpaperDetails: "this is image number 5555", wallpaperStatus: "Live"),
+        //Wallpaper(wallpaperName: "Name 666", wallpaperId: "6.jpg", wallpaperDetails: "this is image number 6666", wallpaperStatus: "Live"),
+        Wallpaper(wallpaperName: "Name 666", wallpaperId: "6.HEIC", wallpaperDetails: "this is image number 6666", wallpaperStatus: "Live")
         
     ]
     

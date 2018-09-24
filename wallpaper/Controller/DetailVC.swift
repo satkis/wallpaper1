@@ -8,6 +8,9 @@
 
 import UIKit
 import Hero
+import PhotosUI
+import Photos
+import MobileCoreServices
 
 class DetailVC: UIViewController {
     
@@ -26,6 +29,15 @@ class DetailVC: UIViewController {
     @IBOutlet weak var appsLbl: UIButton!
     @IBOutlet weak var likeLbl: UIButton!
     @IBOutlet weak var smthElseLbl: UIButton!
+    @IBOutlet weak var settingsExpandLbl: UIViewX!
+    
+//    @IBOutlet weak var livePhotoView: PHLivePhotoView! {
+//        didSet {
+//            loadVideoWithVideoURL(Bundle.main.url(forResource: "video", withExtension: "m4v")!)
+//        }
+//    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +50,10 @@ class DetailVC: UIViewController {
         wallpaperImgLbl.hero.id = self.imageNamee
         
         applyMotionEffect(toView: wallpaperImgLbl, magnitude: 20)
+        
+        self.settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+        closeMenu()
     }
     
     func applyMotionEffect (toView view:UIView, magnitude: Float) {
@@ -84,15 +100,36 @@ class DetailVC: UIViewController {
         }
         
     }
-    
+
  
     @IBAction func settingsBttnTapped(_ sender: Any) {
-        if self.settingsLbl.transform == .identity {
-            //opened
-        } else {
-            //closed
-        }
+        UIView.animate(withDuration: 0.3, animations: {
+            if self.settingsExpandLbl.transform == .identity {
+                //opened
+                self.closeMenu()
+            } else {
+                //closed
+                self.settingsExpandLbl.transform = .identity
+            }
+        })
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 10, options: [], animations: {
+            if self.settingsExpandLbl.transform == .identity {
+            
+            self.shareLbl.transform = .identity
+                self.smthElseLbl.transform = .identity
+                self.storyLbl.transform = .identity
+            }
+        })
     }
+    
+    func closeMenu() {
+        settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        shareLbl.transform = CGAffineTransform(translationX: 0, y: 14)
+        smthElseLbl.transform = CGAffineTransform(translationX: 0, y: 40)
+        storyLbl.transform = CGAffineTransform(translationX: 0, y: 24)
+    }
+    
     
     @IBAction func storyBttnTapped(_ sender: Any) {
     }

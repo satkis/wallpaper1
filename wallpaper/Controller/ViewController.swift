@@ -8,12 +8,15 @@
 
 import UIKit
 import Hero
+import Photos
+import PhotosUI
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collection: UICollectionView!
 
     var wallpaperr = [Wallpaper]()
+    var photoList: PHFetchResult<PHAsset>? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +27,51 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
 
     
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WallpaperCell", for: indexPath) as? WallpaperCell {
+//
+////            let wall = Wallpaper(wallpaperName: "test", wallpaperId: indexPath.item, wallpaperDetails: "test test", wallpaperStatus: "Live")
+//            let asset = photoList?.object(at: indexPath.row)
+//            if (asset?.mediaSubtypes.contains(.photoLive))! {
+//                let walppr = DataService.ds.getCategories()[indexPath.row]
+//                //
+//                UIImageView(cell.imageView) = PHLivePhotoView.livePhotoBadgeImage(options: .overContent)
+//                //
+//
+//            }
+//            let imageManager = PHImageManager()
+//            imageManager.requestImage(for: asset!, targetSize: CGSize.init(width: 80, height: 80), contentMode: .aspectFill, options: nil) { image, _ in
+//                cell.imageView = UIImageView(image)
+//            }
+//
+//    }
+//        return UICollectionViewCell()
+//    }
+    
+
+            
+            
+    
+
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WallpaperCell", for: indexPath) as? WallpaperCell {
-            
-//            let wall = Wallpaper(wallpaperName: "test", wallpaperId: indexPath.item, wallpaperDetails: "test test", wallpaperStatus: "Live")
+
+            //            let wall = Wallpaper(wallpaperName: "test", wallpaperId: indexPath.item, wallpaperDetails: "test test", wallpaperStatus: "Live")
+            let asset = photoList?.object(at: indexPath.row)
+
+
+
+
+
             let walppr = DataService.ds.getCategories()[indexPath.row]
             cell.configureCell(wallpaper: walppr)
-            
+
             return cell
         } else {
             return UICollectionViewCell()
         }
     }
-
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

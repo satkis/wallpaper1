@@ -168,116 +168,211 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-Tw-BSL" customClass="FloatingSettingsButton" customModule="wallpaper" customModuleProvider="target">
-                                <rect key="frame" x="12" y="553" width="55" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7v-iD-l9u" customClass="UIViewX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="399" width="82" height="445"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N62-FE-wIR" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="69" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="ZwT-Zw-ky4"/>
+                                            <constraint firstAttribute="height" constant="44" id="xAF-M6-Rdo"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="story">
+                                            <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="storyBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="rst-Jx-b64"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtt-tq-Gt4" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="5" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="YNZ-jE-P5F"/>
+                                            <constraint firstAttribute="width" constant="44" id="hjx-lB-kbW"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="smth">
+                                            <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="smthElseBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="ZjB-Xf-ASZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-FA-mQN" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="133" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Tke-NB-yjD"/>
+                                            <constraint firstAttribute="width" constant="44" id="uaZ-dY-8Yg"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="share">
+                                            <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="shareBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="F2Y-1V-QxK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dtt-tq-Gt4" firstAttribute="top" secondItem="l7v-iD-l9u" secondAttribute="top" constant="5" id="935-y4-WjV"/>
+                                    <constraint firstAttribute="height" constant="445" id="AkX-RR-J7a"/>
+                                    <constraint firstItem="N62-FE-wIR" firstAttribute="top" secondItem="Dtt-tq-Gt4" secondAttribute="bottom" constant="20" id="Cj0-Ib-hDX"/>
+                                    <constraint firstItem="Yqk-FA-mQN" firstAttribute="leading" secondItem="l7v-iD-l9u" secondAttribute="leading" constant="15" id="Ihl-f7-5N4"/>
+                                    <constraint firstItem="Yqk-FA-mQN" firstAttribute="top" secondItem="N62-FE-wIR" secondAttribute="bottom" constant="20" id="Tzc-lv-5e1"/>
+                                    <constraint firstItem="Dtt-tq-Gt4" firstAttribute="leading" secondItem="l7v-iD-l9u" secondAttribute="leading" constant="15" id="sGa-Rq-Ro6"/>
+                                    <constraint firstAttribute="width" constant="82" id="xVC-Wm-e3t"/>
+                                    <constraint firstItem="N62-FE-wIR" firstAttribute="leading" secondItem="l7v-iD-l9u" secondAttribute="leading" constant="15" id="zWG-N8-Yc4"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1G-qd-hc7" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="321" y="544" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Ozf-wa-MtV"/>
+                                    <constraint firstAttribute="height" constant="44" id="Wj2-ZP-q7a"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="time">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clockBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="RkO-Z0-aQ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3y-rM-e3J" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="157.5" y="597" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hb8-DH-gAk"/>
+                                    <constraint firstAttribute="width" constant="60" id="xky-G1-JZH"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="download">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="xII-PM-oui"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-3M-MbS" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="321" y="608" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Z4o-K1-9ZW"/>
+                                    <constraint firstAttribute="width" constant="44" id="l8y-j5-GBZ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="app">
+                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="appsBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="x20-r4-EAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-Tw-BSL" customClass="FloatingSettingsButton" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="10" y="602" width="55" height="55"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="settings">
                                     <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="27"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.067531221837166561" green="0.33335516432918749" blue="0.66666666666666663" alpha="0.68439640410958902" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="7"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="settingsBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="nxD-46-jUk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1G-qd-hc7">
-                                <rect key="frame" x="313" y="509" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Clock" backgroundImage="5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV5-Kd-2C7" customClass="UIButtonX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="321" y="480" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Adz-Tg-1vD"/>
+                                    <constraint firstAttribute="width" constant="44" id="Qle-a0-vgx"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="like">
                                     <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="clockBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="RkO-Z0-aQ0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3y-rM-e3J">
-                                <rect key="frame" x="164" y="559" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="SAVE" backgroundImage="5">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="xII-PM-oui"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-3M-MbS">
-                                <rect key="frame" x="313" y="559" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Apps" backgroundImage="5">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="appsBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="x20-r4-EAc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-FA-mQN">
-                                <rect key="frame" x="16" y="509" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" backgroundImage="4">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="F2Y-1V-QxK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N62-FE-wIR">
-                                <rect key="frame" x="16" y="459" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Story" backgroundImage="3">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="storyBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="rst-Jx-b64"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV5-Kd-2C7">
-                                <rect key="frame" x="313" y="451" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="HEART" backgroundImage="5">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="likeBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="Fth-Yg-lCK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtt-tq-Gt4">
-                                <rect key="frame" x="16" y="409" width="46" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="smth" backgroundImage="5">
-                                    <color key="titleColor" red="0.94477712560000005" green="0.93907130130000005" blue="0.94327737359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="smthElseBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="ZjB-Xf-ASZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="l7v-iD-l9u" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" id="33w-ci-dnJ"/>
+                            <constraint firstItem="GkH-Tw-BSL" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="10" id="5Hb-rO-Y7V"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="trailing" secondItem="fV5-Kd-2C7" secondAttribute="trailing" constant="10" id="8X9-6a-Vyd"/>
+                            <constraint firstItem="k1G-qd-hc7" firstAttribute="top" secondItem="fV5-Kd-2C7" secondAttribute="bottom" constant="20" id="Eja-mg-1jA"/>
+                            <constraint firstItem="t3y-rM-e3J" firstAttribute="centerX" secondItem="LEq-wh-meg" secondAttribute="centerX" id="Fx2-Rh-l2B"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="bottom" secondItem="t3y-rM-e3J" secondAttribute="bottom" constant="10" id="GnN-en-a0V"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="trailing" secondItem="d7p-ab-7Ex" secondAttribute="trailing" constant="25" id="H5n-oS-9b4"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="trailing" secondItem="k1G-qd-hc7" secondAttribute="trailing" constant="10" id="MUR-k4-54O"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="trailing" secondItem="rFR-3M-MbS" secondAttribute="trailing" constant="10" id="PpG-ea-pfC"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="bottom" secondItem="LEq-wh-meg" secondAttribute="bottom" constant="25" id="YEG-dI-xjv"/>
+                            <constraint firstItem="rFR-3M-MbS" firstAttribute="top" secondItem="k1G-qd-hc7" secondAttribute="bottom" constant="20" id="a2T-tG-wjS"/>
+                            <constraint firstItem="t3y-rM-e3J" firstAttribute="bottom" secondItem="l7v-iD-l9u" secondAttribute="bottom" constant="-187" id="aOw-Wh-hTL"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="-25" id="o6P-HL-lqy"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="bottom" secondItem="rFR-3M-MbS" secondAttribute="bottom" constant="15" id="rp9-VP-kuK"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="top" secondItem="LEq-wh-meg" secondAttribute="top" constant="-25" id="ubU-tA-xsT"/>
+                            <constraint firstItem="d7p-ab-7Ex" firstAttribute="bottom" secondItem="GkH-Tw-BSL" secondAttribute="bottom" constant="10" id="vjk-PB-D6n"/>
                             <constraint firstItem="peg-1g-1vJ" firstAttribute="centerX" secondItem="LEq-wh-meg" secondAttribute="centerX" id="wIw-7Z-1tE"/>
                             <constraint firstItem="peg-1g-1vJ" firstAttribute="centerY" secondItem="LEq-wh-meg" secondAttribute="centerY" id="wLl-fK-VqG"/>
                         </constraints>
@@ -294,11 +389,12 @@
                         <outlet property="clockLbl" destination="k1G-qd-hc7" id="iBs-2f-367"/>
                         <outlet property="likeLbl" destination="fV5-Kd-2C7" id="Ike-va-Zao"/>
                         <outlet property="saveLbl" destination="t3y-rM-e3J" id="VAA-0s-Eag"/>
+                        <outlet property="settingsExpandLbl" destination="l7v-iD-l9u" id="qyS-AP-OqY"/>
                         <outlet property="settingsLbl" destination="GkH-Tw-BSL" id="m1z-CB-QTc"/>
                         <outlet property="shareLbl" destination="Yqk-FA-mQN" id="6gi-pQ-jsY"/>
                         <outlet property="smthElseLbl" destination="Dtt-tq-Gt4" id="eTe-iJ-fHj"/>
                         <outlet property="storyLbl" destination="N62-FE-wIR" id="Aft-mn-Slz"/>
-                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="CQG-cZ-waA"/>
+                        <outlet property="wallpaperImgLbl" destination="h2X-pF-DJS" id="IVr-PN-RoG"/>
                         <outlet property="wallpaperTitleLbl" destination="peg-1g-1vJ" id="Crt-zI-1Mn"/>
                     </connections>
                 </viewController>
@@ -309,14 +405,18 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="117.39130434782609"/>
+            <point key="canvasLocation" x="972" y="104.7976011994003"/>
         </scene>
     </scenes>
     <resources>
         <image name="1" width="480" height="601"/>
-        <image name="3" width="477" height="603"/>
-        <image name="4" width="472" height="595"/>
-        <image name="5" width="473" height="599"/>
+        <image name="app" width="36" height="44"/>
+        <image name="download" width="44" height="42"/>
+        <image name="like" width="44" height="41"/>
         <image name="settings" width="55" height="55"/>
+        <image name="share" width="42" height="44"/>
+        <image name="smth" width="44" height="40"/>
+        <image name="story" width="44" height="36"/>
+        <image name="time" width="44" height="44"/>
     </resources>
 </document>
