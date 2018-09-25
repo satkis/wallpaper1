@@ -15,6 +15,7 @@ class Wallpaper {
     private var _wallpaperStatus: String!
     private var _wallpaperKey: String!
     private var _wallpaperUrl: String!
+    private var _wallpaperVideoUrl: String!
     
     var wallpaperName: String {
         return _wallpaperName
@@ -36,12 +37,17 @@ class Wallpaper {
         return _wallpaperStatus
     }
     
-    init(wallpaperName: String, wallpaperId: Int, wallpaperDetails: String, wallpaperStatus: String, wallpaperUrl: String) {
+    var wallpaperVideoUrl: String {
+        return _wallpaperVideoUrl
+    }
+    
+    init(wallpaperName: String, wallpaperId: Int, wallpaperDetails: String, wallpaperStatus: String, wallpaperUrl: String, wallpaperVideoUrl: String) {
         self._wallpaperName = wallpaperName
         self._wallpaperId = wallpaperId
         self._wallpaperDetails = wallpaperDetails
         self._wallpaperStatus = wallpaperStatus
         self._wallpaperUrl = wallpaperUrl
+        self._wallpaperVideoUrl = wallpaperVideoUrl
     }
     
     init(wallpaperKey: String, dictionary: Dictionary<String, AnyObject>) {
@@ -66,6 +72,10 @@ class Wallpaper {
         
         if let id = dictionary["id"] as? Int {
             self._wallpaperId = id
+        }
+        
+        if let videoLink = dictionary["videoLink"] as? String {
+            self._wallpaperVideoUrl = videoLink
         }
         
     }

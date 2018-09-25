@@ -4,11 +4,14 @@ import PhotosUI
 import Photos
 import MobileCoreServices
 
-class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate{
+
+
+class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     
     //    var wallpaperInDetailVC: Wallpaper!
     var imageNamee: String!
     var imageTitle: String!
+    var videoLink: String!
     
     @IBOutlet weak var wallpaperTitleLbl: UILabel!
     @IBOutlet weak var wallpaperImgLbl: UIImageView!
@@ -44,46 +47,12 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         closeMenu()
     }
+ 
     
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        dismiss(animated: true, completion: nil)
-        
-        print("\(info)")
-        
-        if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
-            livePhotoView.livePhoto = livePhoto
-            livePhotoView.startPlayback(with: .full)
-        } else {
-            let alert = UIAlertController(
-                title: "Failed",
-                message: "This is not a Live Photo.",
-                preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(
-                title: "OK",
-                style: UIAlertActionStyle.cancel,
-                handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-        }
-    }
+
+
     
-    func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
-        livePhotoView.startPlayback(with: .full)
-    }
-    
-    // =========================================================================
-    // MARK: - Actions
-    
-    @IBAction func pickerBtnTapped(_ sender: UIButton) {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        picker.mediaTypes = [kUTTypeImage as String, kUTTypeLivePhoto as String]
-        
-        present(picker, animated: true, completion: nil)
-    }
     
     
     

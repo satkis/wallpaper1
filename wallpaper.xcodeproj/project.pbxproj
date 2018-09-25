@@ -25,6 +25,7 @@
 		FF61FD722157FDFC005AA1A6 /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD682157FDFA005AA1A6 /* UILabelX.swift */; };
 		FF61FD732157FDFC005AA1A6 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD692157FDFA005AA1A6 /* UIViewX.swift */; };
 		FF61FD7621580321005AA1A6 /* FloatingSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */; };
+		FF81E374215A7CDE0048A39F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81E373215A7CDE0048A39F /* Extensions.swift */; };
 		FFCD43DE214E5B0F00898071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DD214E5B0F00898071 /* AppDelegate.swift */; };
 		FFCD43E0214E5B0F00898071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DF214E5B0F00898071 /* ViewController.swift */; };
 		FFCD43E3214E5B0F00898071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD43E1214E5B0F00898071 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		FF61FD682157FDFA005AA1A6 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
 		FF61FD692157FDFA005AA1A6 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSettingsButton.swift; sourceTree = "<group>"; };
+		FF81E373215A7CDE0048A39F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FFCD43DA214E5B0F00898071 /* wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD43DD214E5B0F00898071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD43DF214E5B0F00898071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			path = Desings;
 			sourceTree = "<group>";
 		};
+		FF81E372215A7CC80048A39F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF81E373215A7CDE0048A39F /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FFCD43D1214E5B0F00898071 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		FFCD43DC214E5B0F00898071 /* wallpaper */ = {
 			isa = PBXGroup;
 			children = (
+				FF81E372215A7CC80048A39F /* Helpers */,
 				FF61FD5F2157FDE6005AA1A6 /* Resources */,
 				FF2F4D2C214E9DAB00B5FB4E /* Services */,
 				FF2F4D26214E71D600B5FB4E /* Model */,
@@ -270,7 +281,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -280,7 +291,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -330,6 +341,7 @@
 				FF61FD712157FDFC005AA1A6 /* UIButtonX.swift in Sources */,
 				FFCD43DE214E5B0F00898071 /* AppDelegate.swift in Sources */,
 				FF61FD5E2152C40E005AA1A6 /* DataService.swift in Sources */,
+				FF81E374215A7CDE0048A39F /* Extensions.swift in Sources */,
 				FF61FD722157FDFC005AA1A6 /* UILabelX.swift in Sources */,
 				FF61FD7621580321005AA1A6 /* FloatingSettingsButton.swift in Sources */,
 				FF61FD6A2157FDFC005AA1A6 /* UIViewXRadialGradient.swift in Sources */,

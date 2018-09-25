@@ -218,7 +218,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="pickerBtnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="TOn-Dd-fIn"/>
                                             <action selector="smthElseBttnTapped:" destination="EDs-q1-hQS" eventType="touchUpInside" id="ZjB-Xf-ASZ"/>
                                         </connections>
                                     </button>
@@ -365,6 +364,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NXK-5P-IW7" customClass="PHLivePhotoView">
                                 <rect key="frame" x="52" y="57" width="257" height="238"/>
+                                <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="257" id="UwL-sG-flb"/>
                                     <constraint firstAttribute="height" constant="238" id="lYR-2Y-HDD"/>

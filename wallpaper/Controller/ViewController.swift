@@ -91,12 +91,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print("cellforitematindexpath::::", wallpp.wallpaperDetails)
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WallpaperCell", for: indexPath) as? WallpaperCell {
-            cell.request?.cancel()
-            var image: UIImage?
-            let url = wallpp.wallpaperUrl
-            image = ViewController.imageCache.object(forKey: url as AnyObject) as? UIImage
+//            cell.request?.cancel()
+            //var image: UIImage?
+            //let url = wallpp.wallpaperUrl
+            //image = ViewController.imageCache.object(forKey: url as AnyObject) as? UIImage
+            let wallpaperImage = wallpp.wallpaperUrl
+
+            cell.imageView.loadImageUsingCacheWithUrlString(urlString: wallpaperImage)
+            cell.configureCell(wallpaper: wallpp)
             
-            cell.configureCell(wallpaper: wallpp, img: image)
+            //cell.configureCell(wallpaper: wallpp, img: image)
             return cell
         } else {
             return UICollectionViewCell()
@@ -134,25 +138,36 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
 
 //
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let wallppr: Wallpaper!
-//        print("selected cell item:::", indexPath.item)
-//        print("selected cell row:::", indexPath.row)
-//
-//        DispatchQueue.main.async {
-//            let detailVCC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVCC") as! DetailVC
-//
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let wallpppp = wallpapers[indexPath.row]
+        print("selected cell item:::", indexPath.item)
+        print("selected cell row:::", indexPath.row)
+
+        DispatchQueue.main.async {
+            
+            let detailVCC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVCC") as! DetailVC
+           
 //                detailVCC.imageNamee = DataService.ds.getCategories()[indexPath.row].wallpaperId
 //                detailVCC.imageTitle = DataService.ds.getCategories()[indexPath.row].wallpaperName
-//            detailVCC.hero.isEnabled = true
-//
-////            detailVCC.wallpaperImgLbl.image = UIImage(named: self.wallpaperr[indexPath.row].wallpaperId)
-////            detailVCC.wallpaperTitleLbl.text = DataService.ds.getCategories()[indexPath.row].wallpaperName
-//            self.present(detailVCC, animated: true, completion: nil)
-//
-//        }
-//
-//    }
+//            if detailVCC.imageNamee != "" {
+//                let wallppr = Wallpaper?.self
+//             detailVCC.imageNamee = String(wallppr.)
+//            }
+            
+            detailVCC.imageNamee = String(wallpppp.wallpaperId)
+            detailVCC.imageTitle = wallpppp.wallpaperName
+            detailVCC.videoLink = wallpppp.wallpaperVideoUrl
+            
+            
+            detailVCC.hero.isEnabled = true
+
+//            detailVCC.wallpaperImgLbl.image = UIImage(named: self.wallpaperr[indexPath.row].wallpaperId)
+//            detailVCC.wallpaperTitleLbl.text = DataService.ds.getCategories()[indexPath.row].wallpaperName
+            self.present(detailVCC, animated: true, completion: nil)
+
+        }
+
+    }
     
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let wallppr: Wallpaper!
