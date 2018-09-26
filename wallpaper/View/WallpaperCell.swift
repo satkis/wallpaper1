@@ -20,6 +20,8 @@ class WallpaperCell: UICollectionViewCell {
     @IBOutlet weak var imageStatusLabel: UILabel!
     @IBOutlet weak var imageID: UILabel!
     
+    @IBOutlet weak var imageCoverView: UIView!
+    
     var wallpaper: Wallpaper!
     //var request: Request?
     var imageUrlString: String?
@@ -52,6 +54,26 @@ class WallpaperCell: UICollectionViewCell {
         imageID.text = String(self.wallpaper.wallpaperId)
   
     
+    }
+    
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        
+        let featuredHeight = FeedLayoutConstants.Cell.featureHeight
+        let standardHeight = FeedLayoutConstants.Cell.standardHeight
+        let delta = 1 - (featuredHeight - self.frame.size.height) / (featuredHeight - standardHeight)
+        
+        let minAlpha: CGFloat = 0.0
+        let maxAlpha: CGFloat = 0.65
+        
+        imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
+        
+        let scale = max(delta, 0.5)
+        imageTitleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
+        
+        imageStatusLabel.alpha = delta
+        imageDetailsLabel.alpha = delta
     }
 
 

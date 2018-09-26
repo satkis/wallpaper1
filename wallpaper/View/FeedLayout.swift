@@ -17,7 +17,7 @@ struct FeedLayoutConstants {
 
 class FeedLayout: UICollectionViewLayout {
     
-    let dragOffset: CGFloat = 200.0
+    let dragOffset: CGFloat = 230.0
     var cache = [UICollectionViewLayoutAttributes]()
     
     var featuredItemIndex: Int {
@@ -113,6 +113,18 @@ class FeedLayout: UICollectionViewLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
+    
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        let itemIndex = round(proposedContentOffset.y / dragOffset)
+        let yOffset = itemIndex * dragOffset
+        Vibration.light.vibrate()
+        return CGPoint(x: 0, y: yOffset)
+    }
+
+    
+
+
+
     
     
 }

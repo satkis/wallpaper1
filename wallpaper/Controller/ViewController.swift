@@ -13,18 +13,77 @@ import PhotosUI
 import Firebase
 
 
+enum Vibration {
+    case error
+    case success
+    case warning
+    case light
+    case medium
+    case heavy
+    case selection
+    case oldSchool
+    
+    func vibrate() {
+        
+        switch self {
+        case .error:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+            
+        case .success:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            
+        case .warning:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
+            
+        case .light:
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            
+        case .medium:
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.impactOccurred()
+            
+        case .heavy:
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+            
+        case .selection:
+            let generator = UISelectionFeedbackGenerator()
+            generator.selectionChanged()
+            
+        case .oldSchool:
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+        
+    }
+    
+}
+
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collection: UICollectionView!
-
+    
+    @IBOutlet weak var bgImage: UIImageView!
+    
+    
     var wallpapers = [Wallpaper]()
-    var photoList: PHFetchResult<PHAsset>? = nil
+
     static var imageCache = NSCache<AnyObject, AnyObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self
         collection.dataSource = self
+
+//        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, animations: {
+//            self.collection.center.x = self.view.frame.width / 2
+//        }, completion: nil)
+        
+        self.collection.decelerationRate = UIScrollViewDecelerationRateFast
         
         DataService.ds.URL_WALLPAPERS.observe(.value) { snapshot in
             print(snapshot.value as Any)
@@ -57,7 +116,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //            }
 //            self.collection.reloadData()
         }
-        
+        animateBgImage()
     }
     
 
@@ -203,5 +262,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //    }
 
 
-}
+    func animateBgImage() {
+        UIView.animate(withDuration: 15, delay: 0, options: [.autoreverse, .curveLinear, .repeat], animations: {
+            let x = self.bgImage.frame.width - self.view.frame.width
+            self.bgImage.transform = CGAffineTransform(translationX: x, y: 0
+            )}
+    
+        )}
 
+}

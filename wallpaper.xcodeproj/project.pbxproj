@@ -26,6 +26,10 @@
 		FF61FD732157FDFC005AA1A6 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD692157FDFA005AA1A6 /* UIViewX.swift */; };
 		FF61FD7621580321005AA1A6 /* FloatingSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */; };
 		FF81E374215A7CDE0048A39F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81E373215A7CDE0048A39F /* Extensions.swift */; };
+		FF81E381215C0E7F0048A39F /* System San Francisco Display Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF81E37D215C0E7F0048A39F /* System San Francisco Display Ultralight.ttf */; };
+		FF81E382215C0E7F0048A39F /* System San Francisco Display Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF81E37E215C0E7F0048A39F /* System San Francisco Display Thin.ttf */; };
+		FF81E383215C0E7F0048A39F /* System San Francisco Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF81E37F215C0E7F0048A39F /* System San Francisco Display Bold.ttf */; };
+		FF81E384215C0E7F0048A39F /* System San Francisco Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF81E380215C0E7F0048A39F /* System San Francisco Display Regular.ttf */; };
 		FFCD43DE214E5B0F00898071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DD214E5B0F00898071 /* AppDelegate.swift */; };
 		FFCD43E0214E5B0F00898071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD43DF214E5B0F00898071 /* ViewController.swift */; };
 		FFCD43E3214E5B0F00898071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD43E1214E5B0F00898071 /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		FF61FD692157FDFA005AA1A6 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSettingsButton.swift; sourceTree = "<group>"; };
 		FF81E373215A7CDE0048A39F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FF81E37D215C0E7F0048A39F /* System San Francisco Display Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Ultralight.ttf"; sourceTree = "<group>"; };
+		FF81E37E215C0E7F0048A39F /* System San Francisco Display Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Thin.ttf"; sourceTree = "<group>"; };
+		FF81E37F215C0E7F0048A39F /* System San Francisco Display Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Bold.ttf"; sourceTree = "<group>"; };
+		FF81E380215C0E7F0048A39F /* System San Francisco Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "System San Francisco Display Regular.ttf"; sourceTree = "<group>"; };
 		FFCD43DA214E5B0F00898071 /* wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD43DD214E5B0F00898071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD43DF214E5B0F00898071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 		FF61FD5F2157FDE6005AA1A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FF81E37F215C0E7F0048A39F /* System San Francisco Display Bold.ttf */,
+				FF81E380215C0E7F0048A39F /* System San Francisco Display Regular.ttf */,
+				FF81E37E215C0E7F0048A39F /* System San Francisco Display Thin.ttf */,
+				FF81E37D215C0E7F0048A39F /* System San Francisco Display Ultralight.ttf */,
 				FF61FD7421580218005AA1A6 /* Desings */,
 				FFCD43E7214E5B1000898071 /* Assets.xcassets */,
 				FF61FD7521580321005AA1A6 /* FloatingSettingsButton.swift */,
@@ -262,9 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD43EB214E5B1000898071 /* LaunchScreen.storyboard in Resources */,
+				FF81E384215C0E7F0048A39F /* System San Francisco Display Regular.ttf in Resources */,
 				FF55AB372159905A0053B76F /* GoogleService-Info.plist in Resources */,
 				FFCD43E8214E5B1000898071 /* Assets.xcassets in Resources */,
+				FF81E381215C0E7F0048A39F /* System San Francisco Display Ultralight.ttf in Resources */,
 				FFCD43E3214E5B0F00898071 /* Main.storyboard in Resources */,
+				FF81E382215C0E7F0048A39F /* System San Francisco Display Thin.ttf in Resources */,
+				FF81E383215C0E7F0048A39F /* System San Francisco Display Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
