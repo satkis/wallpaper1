@@ -73,8 +73,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-ag-RJq">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DI-nJ-L06">
+                                                    <rect key="frame" x="1" y="1" width="373" height="138"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="373" id="Mki-rB-ecD"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-ag-RJq">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3I-HR-s7g">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
@@ -115,10 +123,13 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6DI-nJ-L06" secondAttribute="trailing" constant="1" id="4f5-nv-fTh"/>
                                             <constraint firstItem="pDB-ag-RJq" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leading" id="5QY-MB-vqw"/>
                                             <constraint firstItem="phw-pH-zXC" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="topMargin" constant="23" id="7Dr-0u-4N5"/>
+                                            <constraint firstItem="6DI-nJ-L06" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="top" constant="1" id="81u-Sy-zll"/>
                                             <constraint firstAttribute="bottom" secondItem="u3I-HR-s7g" secondAttribute="bottom" id="8bM-vJ-iDW"/>
                                             <constraint firstAttribute="trailing" secondItem="YoP-Xn-mag" secondAttribute="trailing" constant="5" id="8rs-rq-HoT"/>
+                                            <constraint firstItem="6DI-nJ-L06" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leading" constant="1" id="Ceh-P9-8p8"/>
                                             <constraint firstItem="pDB-ag-RJq" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="top" id="G4N-sj-uvy"/>
                                             <constraint firstItem="I4v-oO-j6i" firstAttribute="centerY" secondItem="YVJ-Pr-qKh" secondAttribute="centerY" id="LTN-Yy-VPg"/>
                                             <constraint firstItem="I4v-oO-j6i" firstAttribute="centerX" secondItem="YVJ-Pr-qKh" secondAttribute="centerX" id="McG-zN-1xY"/>
@@ -127,6 +138,7 @@
                                             <constraint firstItem="YoP-Xn-mag" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leading" constant="5" id="cU4-Kd-naA"/>
                                             <constraint firstItem="u3I-HR-s7g" firstAttribute="leading" secondItem="YVJ-Pr-qKh" secondAttribute="leading" id="dXD-Ct-ANw"/>
                                             <constraint firstItem="R7B-kU-XzF" firstAttribute="top" secondItem="YVJ-Pr-qKh" secondAttribute="top" constant="30" id="kKV-V7-nLg"/>
+                                            <constraint firstAttribute="bottom" secondItem="6DI-nJ-L06" secondAttribute="bottom" constant="1" id="sf2-3j-JCO"/>
                                             <constraint firstAttribute="trailing" secondItem="u3I-HR-s7g" secondAttribute="trailing" id="tEO-CX-5Ie"/>
                                             <constraint firstAttribute="bottom" secondItem="pDB-ag-RJq" secondAttribute="bottom" id="uNS-2S-ayI"/>
                                             <constraint firstItem="R7B-kU-XzF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YVJ-Pr-qKh" secondAttribute="leading" symbolic="YES" id="vGd-US-bRI"/>
@@ -138,6 +150,7 @@
                                         </constraints>
                                         <size key="customSize" width="375" height="140"/>
                                         <connections>
+                                            <outlet property="bgContainer" destination="6DI-nJ-L06" id="XEV-pT-Mzi"/>
                                             <outlet property="imageCoverView" destination="u3I-HR-s7g" id="46j-wv-gkl"/>
                                             <outlet property="imageDetailsLabel" destination="YoP-Xn-mag" id="bw6-hA-rcL"/>
                                             <outlet property="imageID" destination="phw-pH-zXC" id="Tpo-0W-sXJ"/>
@@ -473,7 +486,6 @@
     </scenes>
     <resources>
         <image name="1" width="480" height="601"/>
-        <image name="5" width="473" height="599"/>
         <image name="app" width="36" height="44"/>
         <image name="bg" width="915" height="604"/>
         <image name="download" width="44" height="42"/>

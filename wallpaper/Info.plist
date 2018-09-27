@@ -41,6 +41,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs to access your library to save this photo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App needs to access your library to save this photo</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>System San Francisco Display Bold.ttf</string>

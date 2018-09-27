@@ -150,6 +150,9 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
 //        })
 //    }
     
+    
+    
+   
 
 
     
@@ -197,9 +200,113 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         Vibration.selection.vibrate()
     }
     
-    @IBAction func saveBttnTapped(_ sender: Any) {
-        Vibration.success.vibrate()
+    fileprivate func saveImg() {
+        //Encoding
+//        let generator = UIImpactFeedbackGenerator(style: .light)
+//        generator.prepare()
+
+//            let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
+//        //save img
+//        UserDefaults.standard.set(imageData, forKey: "savedImg")
+//        //Decode
+//        let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
+//        let compressedImage = UIImage(data: data as Data)
+//        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+//        Vibration.success.vibrate()
     }
+    
+    @IBAction func saveBttnTapped(_ sender: Any) {
+        //if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+
+            PHPhotoLibrary.requestAuthorization { (status) in
+//                let generator = UIImpactFeedbackGenerator(style: .light)
+//                generator.prepare()
+                
+                switch status {
+ 
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized {
+                        DispatchQueue.main.async {
+//                        self.saveImg()
+                        let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
+                        //save img
+                        UserDefaults.standard.set(imageData, forKey: "savedImg")
+                        //Decode
+                        let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
+                        let compressedImage = UIImage(data: data as Data)
+                        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                        Vibration.success.vibrate()
+                        }
+                    }
+                case .restricted:
+                        self.showErrorAlert(title: "Photo Library access restricted", msg:"Photo Library cannot be accessed.")
+                case .denied:
+//                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Photo Library access was previously denied", message: "Change your Settings.", preferredStyle: .alert)
+                        let goToSettings = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
+                            DispatchQueue.main.async {
+//                                generator.impactOccurred()
+                                let url = URL(string: UIApplicationOpenSettingsURLString)!
+                                UIApplication.shared.open(url, options: [:])
+//                            }
+                        }
+                        }
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                        alert.addAction(goToSettings)
+                        alert.addAction(cancelAction)
+                        self.present(alert, animated: true)
+                    
+                case .authorized:
+                    DispatchQueue.main.async {
+                    let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
+                    //save img
+                    UserDefaults.standard.set(imageData, forKey: "savedImg")
+                    //Decode
+                    let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
+                    let compressedImage = UIImage(data: data as Data)
+                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+                    Vibration.success.vibrate()
+                    }
+                }
+                
+            }
+        }
+   // }
+            
+//        PHPhotoLibrary.requestAuthorization ({ (status) in
+////            let generator = UIImpactFeedbackGenerator(style: .medium)
+////            generator.prepare()
+//
+//            switch status {
+//            case .authorized:
+//                self.saveImg()
+//            case .notDetermined:
+//
+//
+//                }
+//            case .restricted:
+//                self.showErrorAlert(title: "Photo Library access restricted", msg:"Photo Library cannot be accessed.")
+//            case .denied:
+//
+//                let alert = UIAlertController(title: "Photo Library access was previously denied", message: "Change your Settings.", preferredStyle: .alert)
+//                let goToSettings = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
+//
+//DispatchQueue.main.async {
+//
+//                        let url = URL(string: UIApplicationOpenSettingsURLString)!
+//                        UIApplication.shared.open(url, options: [:])
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+//                    alert.addAction(goToSettings)
+//                alert.addAction(cancelAction)
+//                self.present(alert, animated: true)
+//
+//        }
+//            })
+//    }
+//        }
     
     
     
@@ -243,9 +350,13 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         likeLbl.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 55).isActive = true
         likeLbl.bottomAnchor.constraint(equalTo: clockLbl.topAnchor, constant: -30).isActive = true
     }
-        
 
-    
+    func showErrorAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
     
     
 }
