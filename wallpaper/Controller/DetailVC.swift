@@ -11,6 +11,7 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     var imageTitle: String!
     var videoLink: String!
     var effect: UIVisualEffect!
+//    var cropImage = UIImage()
 
     @IBOutlet weak var wallpaperTitleLbl: UILabel!
     @IBOutlet weak var wallpaperImgLbl: UIImageView!
@@ -26,6 +27,7 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     @IBOutlet weak var clockStackLbl: UIStackView!
     @IBOutlet weak var savedBlurLbl: UIVisualEffectViewX!
     //@IBOutlet weak fileprivate var livePhotoView: PHLivePhotoView!
+    @IBOutlet weak var appsImagesLbl: UIStackView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,6 +42,7 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         self.hero.isEnabled = true
         setupLayout()
         self.clockStackLbl.alpha = 0
+        self.appsImagesLbl.alpha = 0
         effect = savedBlurLbl.effect
         savedBlurLbl.effect = nil
         wallpaperTitleLbl.text = self.imageTitle
@@ -49,8 +52,63 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         self.settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         closeMenu()
         savedBlurLbl.alpha = 0
+//        watermarkOnScreenshot()
+        
+//        UIGraphicsBeginImageContext(self.view!.bounds.size)
+//        self.view!.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+//        //UIGraphicsEndImageContext()
+//
+//        let newImageView = UIImageView(image : screenshot)
+//        let labelView = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 50)) //adjust frame to change position of water mark or text
+//        labelView.text = "my text"
+//        newImageView.addSubview(labelView)
+//        UIGraphicsBeginImageContext(newImageView.frame.size)
+//        newImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        let watermarkedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
     }
- 
+    
+//    func watermarkOnScreenshot() {
+//
+//
+//        let layer = UIApplication.shared.keyWindow?.layer
+//        let scale = UIScreen.main.scale
+//        UIGraphicsBeginImageContextWithOptions(layer!.frame.size, false, scale)
+//        layer?.render(in: UIGraphicsGetCurrentContext()!)
+//        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        let croppedImage = self.cropImage(screenshot: screenshot!)
+//
+//        let newImageView = UIImageView(image : croppedImage)
+//        let labelView = UILabel(frame: CGRect(x: 30, y: 30, width: 100, height: 20)) //adjust frame to change position of water mark or text
+//        labelView.text = "my text"
+//        newImageView.addSubview(labelView)
+//        UIGraphicsBeginImageContext(newImageView.frame.size)
+//        newImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        let watermarkedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//    }
+//
+//
+//    func cropImage(screenshot: UIImage) -> UIImage {
+//        let scale = screenshot.scale
+//        let imgSize = screenshot.size
+//        let screenHeight = UIScreen.main.bounds.height
+//        let bound = self.view.bounds.height
+//        let navHeight = self.navigationController!.navigationBar.frame.height
+//        let bottomBarHeight = screenHeight - navHeight - bound
+//        let crop = CGRect(x: 0, y: 200, width: (imgSize.width - 1), height: (imgSize.height - bottomBarHeight - 300) * scale)
+////        let cgImadge = CGImageCreateWithImageInRect(screenshot.cgImage!, crop)
+////        let cgImage = cgImage!.cropping(to: screenshot.cgImage)
+//        let image: UIImage = UIImage(cgImage: cropImage as! CGImage)
+////        var imageRef = self.image.cropping(to: screenshot.cgImage)
+//        var imageRef = UIImage(image.cgImage?.cropping(to: screenshot.cgImage as! CGRect))
+////        let cgImage = CGImageCreateWithImageInRect(screenshot.cgImage!, crop)
+//
+//        return imageRef
+//    }
+//
     
     func applyMotionEffect (toView view:UIView, magnitude: Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
@@ -95,10 +153,13 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
             self.savedBlurLbl.alpha = 1
         }, completion: {
             (Completed : Bool) -> Void in
-            UIView.animate(withDuration: 1.0, delay: 1.0, options: UIViewAnimationOptions.curveLinear, animations: {
+            UIView.animate(withDuration: 1.5, delay: 1.0, options: UIViewAnimationOptions.curveLinear, animations: {
                 self.savedBlurLbl.effect = nil
                 self.savedBlurLbl.alpha = 0
             })
+//            UIView.animate(withDuration: 1.5, animations: {
+//                self.savedBlurLbl.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+//            })
         })
     }
     
@@ -176,16 +237,27 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     }
     
     @IBAction func appsBttnTapped(_ sender: Any) {
-        Vibration.light.vibrate()
+        if self.appsImagesLbl.alpha == CGFloat(0) {
+            self.clockStackLbl.alpha = 0
+            self.clockLbl.tintColor = #colorLiteral(red: 0.8000000119, green: 0.8000000119, blue: 0.8000000119, alpha: 1)
+            UIView.animate(withDuration: 0.3) {
+                self.appsImagesLbl.alpha = 1
+                self.appsLbl.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+                Vibration.light.vibrate()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.appsImagesLbl.alpha = 0
+                self.appsLbl.tintColor = #colorLiteral(red: 0.8000000119, green: 0.8000000119, blue: 0.8000000119, alpha: 1)
+            }
+        }
     }
     
-    func animateClock() {
-        
-        
-    }
     
     @IBAction func clockBttnTapped(_ sender: Any) {
         if self.clockStackLbl.alpha == CGFloat(0) {
+            self.appsImagesLbl.alpha = 0
+            self.appsLbl.tintColor = #colorLiteral(red: 0.8000000119, green: 0.8000000119, blue: 0.8000000119, alpha: 1)
             UIView.animate(withDuration: 0.3) {
                 self.clockStackLbl.alpha = 1
                 self.clockLbl.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
