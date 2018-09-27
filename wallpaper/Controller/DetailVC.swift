@@ -5,17 +5,15 @@ import Photos
 import MobileCoreServices
 
 
-
 class DetailVC: UIViewController, PHLivePhotoViewDelegate{
-    
-    //    var wallpaperInDetailVC: Wallpaper!
+
     var imageNamee: String!
     var imageTitle: String!
     var videoLink: String!
-    
+    var effect: UIVisualEffect!
+
     @IBOutlet weak var wallpaperTitleLbl: UILabel!
     @IBOutlet weak var wallpaperImgLbl: UIImageView!
-    
     @IBOutlet weak var settingsLbl: UIButton!
     @IBOutlet weak var storyLbl: UIButton!
     @IBOutlet weak var shareLbl: UIButton!
@@ -26,43 +24,33 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     @IBOutlet weak var smthElseLbl: UIButton!
     @IBOutlet weak var settingsExpandLbl: UIViewX!
     @IBOutlet weak var clockStackLbl: UIStackView!
-    
+    @IBOutlet weak var savedBlurLbl: UIVisualEffectViewX!
     //@IBOutlet weak fileprivate var livePhotoView: PHLivePhotoView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         buttonsAppear()
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hero.isEnabled = true
         setupLayout()
         self.clockStackLbl.alpha = 0
-
-        
-        //        wallpaperTitleLbl.text = wallpaperInDetailVC.wallpaperName
+        effect = savedBlurLbl.effect
+        savedBlurLbl.effect = nil
         wallpaperTitleLbl.text = self.imageTitle
-        //        wallpaperImgLbl.image = UIImage(named: wallpaperInDetailVC.wallpaperId)
         wallpaperImgLbl.image = UIImage(named: self.imageNamee)
         wallpaperImgLbl.hero.id = self.imageNamee
-        
         applyMotionEffect(toView: wallpaperImgLbl, magnitude: 20)
-        
         self.settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
         closeMenu()
+        savedBlurLbl.alpha = 0
     }
  
-    
-    
-
-
-    
-    
-    
     
     func applyMotionEffect (toView view:UIView, magnitude: Float) {
         let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
@@ -76,8 +64,51 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         let group = UIMotionEffectGroup()
         group.motionEffects = [xMotion, yMotion]
         view.addMotionEffect(group)
-        
     }
+    
+    func closeMenu() {
+        settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        shareLbl.transform = CGAffineTransform(translationX: 0, y: 14)
+        smthElseLbl.transform = CGAffineTransform(translationX: 0, y: 40)
+        storyLbl.transform = CGAffineTransform(translationX: 0, y: 24)
+    }
+    
+    
+    fileprivate func saveImagetoDevice() {
+        DispatchQueue.main.async {
+            //Encode
+            let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
+            //save img
+            UserDefaults.standard.set(imageData, forKey: "savedImg")
+            //Decode
+            let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
+            let compressedImage = UIImage(data: data as Data)
+            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+            Vibration.success.vibrate()
+            self.savedLbl()
+        }
+    }
+    
+    func savedLbl() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.savedBlurLbl.effect = self.effect
+            self.savedBlurLbl.alpha = 1
+        }, completion: {
+            (Completed : Bool) -> Void in
+            UIView.animate(withDuration: 1.0, delay: 1.0, options: UIViewAnimationOptions.curveLinear, animations: {
+                self.savedBlurLbl.effect = nil
+                self.savedBlurLbl.alpha = 0
+            })
+        })
+    }
+    
+    func showErrorAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
     
     
     
@@ -104,9 +135,7 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
             } else {
                 Hero.shared.cancel()
             }
-            
         }
-        
     }
     
     
@@ -132,29 +161,6 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
             }
         })
     }
-    
-    func closeMenu() {
-        settingsExpandLbl.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        shareLbl.transform = CGAffineTransform(translationX: 0, y: 14)
-        smthElseLbl.transform = CGAffineTransform(translationX: 0, y: 40)
-        storyLbl.transform = CGAffineTransform(translationX: 0, y: 24)
-    }
-    
-//    func animateClock() {
-//        UIView.animate(withDuration: 1.0, animations: {
-//            self.clockStackLbl.alpha = 1
-//        }, completion: {(Completion : Bool) -> Void in
-//            UIView.animate(withDuration: 1.0, delay: 3.0, options: UIViewAnimationOptions.curveLinear, animations: {
-//                self.clockStackLbl.alpha = 0
-//            }, completion: nil)
-//        })
-//    }
-    
-    
-    
-   
-
-
     
     
     @IBAction func storyBttnTapped(_ sender: Any) {
@@ -194,121 +200,39 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
     }
 
     
-
-    
     @IBAction func likeBttnTapped(_ sender: Any) {
         Vibration.selection.vibrate()
     }
     
-    fileprivate func saveImg() {
-        //Encoding
-//        let generator = UIImpactFeedbackGenerator(style: .light)
-//        generator.prepare()
-
-//            let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
-//        //save img
-//        UserDefaults.standard.set(imageData, forKey: "savedImg")
-//        //Decode
-//        let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
-//        let compressedImage = UIImage(data: data as Data)
-//        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-//        Vibration.success.vibrate()
-    }
     
     @IBAction func saveBttnTapped(_ sender: Any) {
-        //if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-
-            PHPhotoLibrary.requestAuthorization { (status) in
-//                let generator = UIImpactFeedbackGenerator(style: .light)
-//                generator.prepare()
-                
-                switch status {
- 
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized {
-                        DispatchQueue.main.async {
-//                        self.saveImg()
-                        let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
-                        //save img
-                        UserDefaults.standard.set(imageData, forKey: "savedImg")
-                        //Decode
-                        let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
-                        let compressedImage = UIImage(data: data as Data)
-                        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                        Vibration.success.vibrate()
-                        }
-                    }
-                case .restricted:
-                        self.showErrorAlert(title: "Photo Library access restricted", msg:"Photo Library cannot be accessed.")
-                case .denied:
-//                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Photo Library access was previously denied", message: "Change your Settings.", preferredStyle: .alert)
-                        let goToSettings = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
-                            DispatchQueue.main.async {
-//                                generator.impactOccurred()
-                                let url = URL(string: UIApplicationOpenSettingsURLString)!
-                                UIApplication.shared.open(url, options: [:])
-//                            }
-                        }
-                        }
-                        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                        alert.addAction(goToSettings)
-                        alert.addAction(cancelAction)
-                        self.present(alert, animated: true)
-                    
-                case .authorized:
+        PHPhotoLibrary.requestAuthorization { (status) in
+            
+            switch status {
+            case .notDetermined:
+                if status == PHAuthorizationStatus.authorized {
+                    self.saveImagetoDevice()
+                }
+            case .restricted:
+                self.showErrorAlert(title: "Photo Library access restricted", msg:"Photo Library cannot be accessed.")
+            case .denied:
+                let alert = UIAlertController(title: "Photo Library access was previously denied", message: "Change your Settings.", preferredStyle: .alert)
+                let goToSettings = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
                     DispatchQueue.main.async {
-                    let imageData = UIImagePNGRepresentation(self.wallpaperImgLbl.image!)! as NSData
-                    //save img
-                    UserDefaults.standard.set(imageData, forKey: "savedImg")
-                    //Decode
-                    let data = UserDefaults.standard.object(forKey: "savedImg") as! NSData
-                    let compressedImage = UIImage(data: data as Data)
-                    UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-                    Vibration.success.vibrate()
+                        let url = URL(string: UIApplicationOpenSettingsURLString)!
+                        UIApplication.shared.open(url, options: [:])
                     }
                 }
-                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                alert.addAction(goToSettings)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true)
+            case .authorized:
+                self.saveImagetoDevice()
             }
         }
-   // }
-            
-//        PHPhotoLibrary.requestAuthorization ({ (status) in
-////            let generator = UIImpactFeedbackGenerator(style: .medium)
-////            generator.prepare()
-//
-//            switch status {
-//            case .authorized:
-//                self.saveImg()
-//            case .notDetermined:
-//
-//
-//                }
-//            case .restricted:
-//                self.showErrorAlert(title: "Photo Library access restricted", msg:"Photo Library cannot be accessed.")
-//            case .denied:
-//
-//                let alert = UIAlertController(title: "Photo Library access was previously denied", message: "Change your Settings.", preferredStyle: .alert)
-//                let goToSettings = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
-//
-//DispatchQueue.main.async {
-//
-//                        let url = URL(string: UIApplicationOpenSettingsURLString)!
-//                        UIApplication.shared.open(url, options: [:])
-//                    }
-//                }
-//
-//                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-//                    alert.addAction(goToSettings)
-//                alert.addAction(cancelAction)
-//                self.present(alert, animated: true)
-//
-//        }
-//            })
-//    }
-//        }
-    
-    
+    }
+
     
     private func buttonsAppear() {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 10, animations: {
@@ -324,8 +248,6 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         UIView.animate(withDuration: 1.0, delay: 0.20, usingSpringWithDamping: 1.0, initialSpringVelocity: 10, animations: {
             self.likeLbl.center.x = self.view.frame.width - 40
         })
-        
-        
     }
     
     private func setupLayout() {
@@ -351,12 +273,5 @@ class DetailVC: UIViewController, PHLivePhotoViewDelegate{
         likeLbl.bottomAnchor.constraint(equalTo: clockLbl.topAnchor, constant: -30).isActive = true
     }
 
-    func showErrorAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
+
 }

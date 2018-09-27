@@ -205,7 +205,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2X-pF-DJS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="h2X-pF-DJS">
                                 <rect key="frame" x="-25" y="-25" width="425" height="717"/>
                                 <gestureRecognizers/>
                             </imageView>
@@ -436,6 +436,35 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-pl-NMi" customClass="UIVisualEffectViewX" customModule="wallpaper" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="303.5" width="100" height="60"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X23-i9-bg3">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKO-Fc-xCu">
+                                            <rect key="frame" x="13" y="15.5" width="74.5" height="29.5"/>
+                                            <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kKO-Fc-xCu" firstAttribute="centerY" secondItem="X23-i9-bg3" secondAttribute="centerY" id="NZx-is-ZTV"/>
+                                        <constraint firstItem="kKO-Fc-xCu" firstAttribute="centerX" secondItem="X23-i9-bg3" secondAttribute="centerX" id="YQy-vX-lqC"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Q5t-HP-F9E"/>
+                                    <constraint firstAttribute="height" constant="60" id="oaN-vN-p2j"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -446,8 +475,10 @@
                             <constraint firstItem="peg-1g-1vJ" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="64" id="ULJ-Hd-9H0"/>
                             <constraint firstItem="peg-1g-1vJ" firstAttribute="top" secondItem="d7p-ab-7Ex" secondAttribute="top" constant="200" id="Xue-O5-dHZ"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="bottom" secondItem="LEq-wh-meg" secondAttribute="bottom" constant="25" id="YEG-dI-xjv"/>
+                            <constraint firstItem="jQB-pl-NMi" firstAttribute="centerY" secondItem="LEq-wh-meg" secondAttribute="centerY" id="Z2w-w8-LDc"/>
                             <constraint firstItem="l7v-iD-l9u" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" id="kLv-U5-7Qt"/>
                             <constraint firstAttribute="bottom" secondItem="l7v-iD-l9u" secondAttribute="bottom" constant="-177" id="kyf-LN-o1o"/>
+                            <constraint firstItem="jQB-pl-NMi" firstAttribute="centerX" secondItem="LEq-wh-meg" secondAttribute="centerX" id="mq8-ZX-bin"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="leading" secondItem="d7p-ab-7Ex" secondAttribute="leading" constant="-25" id="o6P-HL-lqy"/>
                             <constraint firstItem="h2X-pF-DJS" firstAttribute="top" secondItem="LEq-wh-meg" secondAttribute="top" constant="-25" id="ubU-tA-xsT"/>
                         </constraints>
@@ -465,6 +496,7 @@
                         <outlet property="clockStackLbl" destination="lEt-gc-Q8N" id="JBf-AS-ibB"/>
                         <outlet property="likeLbl" destination="fV5-Kd-2C7" id="Ike-va-Zao"/>
                         <outlet property="saveLbl" destination="t3y-rM-e3J" id="VAA-0s-Eag"/>
+                        <outlet property="savedBlurLbl" destination="jQB-pl-NMi" id="xYD-jV-eTV"/>
                         <outlet property="settingsExpandLbl" destination="l7v-iD-l9u" id="qyS-AP-OqY"/>
                         <outlet property="settingsLbl" destination="GkH-Tw-BSL" id="m1z-CB-QTc"/>
                         <outlet property="shareLbl" destination="Yqk-FA-mQN" id="6gi-pQ-jsY"/>
@@ -485,6 +517,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0" width="476" height="596"/>
         <image name="1" width="480" height="601"/>
         <image name="app" width="36" height="44"/>
         <image name="bg" width="915" height="604"/>
